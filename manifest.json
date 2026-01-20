@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Dimensions Converter",
+  "version": "1.0",
+  "description": "Convert imperial units to metric with a single highlight",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "contextMenus"
+  ],
+  "action": {
+    "default_title": "Open Dimensions Converter",
+    "default_icon": "icons/toolbar_icon.svg"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content_script.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

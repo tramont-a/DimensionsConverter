@@ -1,0 +1,234 @@
+/* Floating panel styles */
+.dimensions-converter-panel {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 300px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  padding: 16px;
+  z-index: 9999999;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  animation: slideIn 0.3s ease-out;
+  border: none;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(350px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.dimensions-converter-panel.hidden {
+  animation: slideOut 0.3s ease-out forwards;
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(350px);
+  }
+}
+
+.converter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 10px;
+}
+
+.converter-title {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.converter-close {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.converter-close:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: rotate(90deg);
+}
+
+.converter-item {
+  margin-bottom: 12px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.converter-item:last-child {
+  margin-bottom: 0;
+}
+
+.converter-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.converter-original {
+  font-size: 13px;
+  opacity: 0.9;
+  margin-bottom: 4px;
+}
+
+.converter-converted {
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.converter-copy-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.2s;
+}
+
+.converter-copy-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.converter-copy-btn:active {
+  transform: scale(0.95);
+}
+
+.no-conversions {
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+/* Draggable handle */
+.converter-drag-handle {
+  cursor: grab;
+  user-select: none;
+}
+
+.converter-drag-handle:active {
+  cursor: grabbing;
+}
+
+/* Manual converter input styles */
+.converter-input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.converter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.converter-label {
+  font-size: 11px;
+  opacity: 0.8;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.converter-input,
+.converter-select {
+  padding: 8px 10px;
+  border: none;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  font-size: 13px;
+  font-family: inherit;
+  transition: background 0.2s;
+}
+
+.converter-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.converter-input:focus,
+.converter-select:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+.converter-select {
+  cursor: pointer;
+}
+
+.converter-select option {
+  background: #667eea;
+  color: white;
+}
+
+.converter-select optgroup {
+  background: #667eea;
+  color: white;
+}
+
+/* Result section styles */
+.converter-result-section {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 10px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.converter-result {
+  font-size: 13px;
+  opacity: 0.9;
+  text-align: center;
+}
+
+.converter-result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 8px;
+}
+
+.converter-result-text {
+  font-size: 13px;
+  flex: 1;
+}
